@@ -1,0 +1,154 @@
+	WEEK-12
+
+1 DEPLOYMENT OF INDEX.HTML USING EC2 INSTANCE in AWS
+Step 1: Login to AWS /canvas account	
+Go to course invitation mail and click on start
+Opens the aws academy, select the student login and enter the email and password details 
+Click on Modules
+Scroll down and select Lunch AWS Academy Lab-
+Click on start Lab and wait AWS      becomes from red to green AWS
+
+
+
+
+
+Click on AWS
+
+
+Step 2: Click on EC2 to create instance
+
+
+Click on Launch Instance
+
+
+Stage 1  --Name (Giving name to the machine) ubuntu 
+       Stage 2  -- Select AMI  ( Note: Select free tier eligible ) ubuntu server
+Give name and select ubuntu under application
+
+Select this free tier option of Ubuntu from here
+
+Stage 3   --  Architecture as 64-bit	
+Make sure AMI and Architecture are there as shown
+
+Stage 4  --  Instance type ----  t2.micro(default 1 CPU,1 GB RAM)
+
+
+Stage 5  --  Create a new keypair---a keypair will downloaded  with extension .pem
+                              Store key in folder AWS
+First Click on create-new key pair
+
+
+Give KeyPair name and click on create key pair
+
+
+Save the .pem file in folder AWS on desktop
+
+Stage 6  -- Network Setting ----Create Security group  --  ( It deals with ports )
+(Note for understanding We have 0 to 65535 ports. Every port is dedicated to special purpose)		
+HERE select https and http (which allow to load your web pages while execution)
+In network setting check all the checkboxes 
+
+
+Stage 7 -- Storage - 8GB ( Observation - we have root - it is same as C Drive) it default 8 GB
+
+Stage 8 --- click on launch instance
+
+Now click on the instances
+
+
+Wait for the Success message to apper in green color
+
+
+You can see MyExampleWebServer is Running and wait for it to initialize
+
+
+You have to get 2 tests passes. 
+Important:---- Now check the box and click on connect.
+Do this step:---once it is created select that instance 
+(Tick in checkbox) and click on connect
+
+
+Thus your EC2 instance is running on server. 
+
+
+Step 4: Now you can connect local system to server (EC2 instance) using secure shell SSH.
+
+
+For this, Here copy the ssh – i command from SSH client connect tab and paste later
+Next We can use powershell /gitbash /webconsole in administrative mode, to connect to ubuntu machine.
+Step a: Copy the path of .pem file that you saved earlier in folder AWS eg.  as here D:\SUNNY\SELABWEB\AWS
+ 
+
+
+Step b: Open Powershell in administrative mode and navigate to that path. 
+Type:   cd < path> 
+eg. cd D:\SUNNY\SELABWEB\AWS here specify your .pem path
+
+
+
+Step c: Go to SSh and copy the command ssh which is present at the below
+
+
+Note: To connect to above terminals we need to go into the path of the keypair.and 
+paste  the   ssh -i command from the aws console
+
+Step d: Run the pasted ssh -i command in the terminal
+
+
+
+Step 5: Run the following commands to install s/w
+1.Update all softwares in Ubuntu by command
+sudo apt update
+
+
+
+2.Install docker by command
+sudo apt-get install docker.io
+
+
+3.Install git by command
+sudo apt install git
+
+
+
+4.Install nano( text editor) by command
+Sudo apt install nano
+
+
+
+Step 6: Now we want to create an application, push it into git, create docker image of it and run it
+
+Step a: Create basic index.html file in folder Example and save it
+
+
+
+Step b: Open git Bash in folder Example by right clicking with mouse
+
+
+
+Step c: In git bash run the following commands
+git init
+git add .
+Git commit –m “first commit”
+
+
+
+Step d: Create git repository (here with name AWS)
+
+
+Step e: Copy command one by one from above repository and run as below
+git branch –M main
+git remote add origin <https url>
+git push –u origin main
+
+
+
+
+
+Step f:  refresh repository and You can now see index.html in github
+
+
+Step g:  Copy http path
+
+
+c
